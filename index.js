@@ -5,6 +5,15 @@ const GET_TIMEOUT = 60 * 1000;
 const MY_EOJ = [0x05, 0xff, 0x01];
 const LOCALE = 'EN';
 const RESPONSE_PREFIX = '/v1/echonet';
+var pino = require('pino')();
+var redis = require('redis'),
+    RDS_PORT = 6379, //port
+    RDS_HOST = '127.0.1.1', //Server IP
+    RDS_PWD = '',
+    RDS_OPTS = {},
+    PUBDataChange = redis.createClient(RDS_PORT, RDS_HOST, RDS_OPTS),
+    SUBSendCmd = redis.createClient(RDS_PORT, RDS_HOST, RDS_OPTS),
+    PUBReplyCmd = redis.createClient(RDS_PORT, RDS_HOST, RDS_OPTS);
 
 // first DEVICE_MULTICAST_INTITIAL_NUMBER accesses are done in every
 // DEVICE_MULTICAST_INITIAL_INTERVAL ms. Then the frequency becomes
@@ -167,9 +176,30 @@ async function init(pluginInterface) {
         macinfo.active = false;
         for (const dev of Object.values(macinfo.devices)) {
             dev.active = false;
-        }
+                }
     }
-
+    //20191211
+    //程式開啟的時候即SUB SendCmd
+    SUBSendCmd.subscribe('SendCmd');
+    SUBSendCmd.on('message', function (channel, message) {
+        let msg = JSON.parse(message);
+        //console.log(Object.keys(msg['body']));
+        //遍歷一次所有的property更改後傳輸
+        Object.keys(msg['body']).forEach(Element=>{
+            //console.log(Element);
+            let args =
+            {
+                value:msg['body'][Element]
+            }
+            //onProcCallPut('PUT',msg['id'],Element,args);
+            pino.info(onProcCallPut('PUT',msg['id'],Element,args));            
+            //console.log('[SetCmd]  '+Date.now());//計時用
+        })
+        PUBReplyCmd.publish('ReplyCmd', "SetCmd OK!!!", function (channel, count) {
+            pino.info('[PUB][ReplyCmd]  '+"SetCmd OK!!!");
+        });
+            
+    });
 
     /*
     function setIPAddressAsUnknown(ip) {
@@ -458,6 +488,17 @@ async function init(pluginInterface) {
                         pi.server.publish(
                             (mm.eoj_id_map[els.SEOJ] + '/' + epcType).toLowerCase(),
                             data);
+
+                        //20191210 R&D. 陳
+                        //新增message格式暫用，主要用來拆解原本Picogw的echonetlite結構                        
+                        const message = {
+                            DeviceId: mm.eoj_id_map[els.SEOJ],
+                            property : epcType,
+                            value: (edtConvFunc && edtConvFunc(edt)),
+                        };
+                        //當近來這段表示Data已經被比較過並且改變，所以直接publish到DataChange
+                        PUBDataChange.publish('DataChange', JSON.stringify(message), function (channel, count) {});
+                        pino.info(`[PUB][DataChange]  ${JSON.stringify(message)}`);
                     }
                 }
 

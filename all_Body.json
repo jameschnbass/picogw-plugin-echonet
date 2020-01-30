@@ -16081,6 +16081,79 @@
 							}
 						}
 					]
+				},
+				"0xF2": {
+					"epcType": "HotWaterUsage_FC",
+					"epcName": "$EPCNAME_HOT_WATER_USAGE_FC",
+					"epcSize": 2,
+					"accessModeAnno": "notApplicable",
+					"accessModeGet": "optional",
+					"accessModeSet": "notApplicable",
+					"doc": "$EPCDOC_027C_F2",
+					"edt": [
+						{
+							"elementType": "HotWaterUsage_FC",
+							"elementName": "$ELEMNAME_HOT_WATER_USAGE_FC",
+							"elementSize": 2,
+							"repeatCount": 1,
+							"content": {
+								"numericValue": {
+									"integerType": "Unsigned",
+									"unit": "L",
+									"min": 0,
+									"max": 65533
+								}
+							}
+						}
+					]
+				},
+				"0xF6": {
+					"epcType": "HeatRecovery_FC",
+					"epcName": "$EPCNAME_HEAT_RECOVERY_FC",
+					"epcSize": 2,
+					"accessModeAnno": "notApplicable",
+					"accessModeGet": "optional",
+					"accessModeSet": "notApplicable",
+					"doc": "$EPCDOC_027C_F6",
+					"edt": [
+						{
+							"elementType": "HeatRecovery_FC",
+							"elementName": "$ELEMNAME_HEAT_RECOVERY_FC",
+							"elementSize": 2,
+							"repeatCount": 1,
+							"content": {
+								"numericValue": {
+									"integerType": "Unsigned",
+									"unit": "??",
+									"min": 0,
+									"max": 65533
+								}
+							}
+						}
+					]
+				},
+				"0xF9": {
+					"epcType": "FullTankSignal",
+					"epcName": "$EPCNAME_FULL_TANK_SIGNAL",
+					"epcSize": 1,
+					"accessModeAnno": "notApplicable",
+					"accessModeGet": "optional",
+					"accessModeSet": "notApplicable",
+					"doc": "$EPCDOC_027C_F9",
+					"edt": [
+						{
+							"elementType": "FullTankSignal",
+							"elementName": "$ELEMNAME_FULL_TANK_SIGNAL",
+							"elementSize": 1,
+							"repeatCount": 1,
+							"content": {
+								"keyValue": {
+									"0x41": "滿桶",
+									"0x42": "未滿"
+								}
+							}
+						}
+					]
 				}
 			}
 		},

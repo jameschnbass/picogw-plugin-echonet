@@ -1185,6 +1185,19 @@
 		"$ELEMNAME_HOME_CUMULATIVE_POWER_CONSUMPTION_RESET_SETTING": "Home cumulative power consumption reset setting",
 		"$EPCDOC_027C_E1": "This property indicates the measured amount of the remaining hot water in liters.\n\n0x0000-0xFFFD i0-65533 liters j\n\nName : Measured remaining hot water amount\nEPC : 0xE1\nData Type : unsigned short\nData Size(Byte) : 2 Byte\n\nAccessRule\nAnnounce : undefined\nSet : undefined\nGet : optional\n",
 		"$EPCDOC_027C_E2": "This property indicates the tank capacity in liters.\n\n0x0000-0xFFFD i0-65533 liters j\n\nName : Tank capacity\nEPC : 0xE2\nData Type : unsigned short\nData Size(Byte) : 2 Byte\n\nAccessRule\nAnnounce : undefined\nSet : undefined\nGet : optional\n",
+		
+		"$EPCDOC_027C_F2": "Test",
+		"$ELEMNAME_HOT_WATER_USAGE_FC": "Test",
+		"$EPCNAME_HOT_WATER_USAGE_FC": "Test",
+
+		"$EPCDOC_027C_F6": "Test",
+		"$ELEMNAME_HEAT_RECOVERY_FC": "Test",
+		"$EPCNAME_HEAT_RECOVERY_FC": "Test",
+
+		"$EPCDOC_027C_F9": "Test",
+		"$ELEMNAME_FULL_TANK_SIGNAL": "Test",
+		"$EPCNAME_FULL_TANK_SIGNAL": "Test",
+		
 		"$OBJNAME_027D": "Storage battery",
 		"$EPCNAME_MINIMUM_MAXIMUM_CHARGING_POWER_VALUE": "Minimum maximum charging power value",
 		"$ELEMNAME_MIN___MAX_CHARGING_POWER_VALUE": "Min / Max charging power value",

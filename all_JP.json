@@ -1185,6 +1185,19 @@
 		"$ELEMNAME_HOME_CUMULATIVE_POWER_CONSUMPTION_RESET_SETTING": "宅内積算消費電力量リセット設定",
 		"$EPCDOC_027C_E1": "このプロパティは、リットルの残り湯の測定された量を示します。 \n\n 0x0000-0xFFFD i0-65533リットルjを\n\n名前：測定残りの湯量\n EPC：0xE1の\nデータ型：符号なしshort \nデータサイズ（バイト）：2バイト\n\n AccessRule \n発表：未定義\nセット：未定義\n取得：オプション\n",
 		"$EPCDOC_027C_E2": "このプロパティは、リットル中のタンク容量を示しています。 \n\n 0x0000-0xFFFD i0-65533リットルjを\n\n名前：タンク容量\n EPC：0xE2 \nデータ型：符号なしshort \nデータサイズ（バイト）：2バイト\n\n AccessRule \n発表：未定義\nセット：未定義\n取得：オプション\n",
+		
+		"$EPCDOC_027C_F2": "Test",
+		"$ELEMNAME_HOT_WATER_USAGE_FC": "Test",
+		"$EPCNAME_HOT_WATER_USAGE_FC": "Test",
+
+		"$EPCDOC_027C_F6": "Test",
+		"$ELEMNAME_HEAT_RECOVERY_FC": "Test",
+		"$EPCNAME_HEAT_RECOVERY_FC": "Test",
+
+		"$EPCDOC_027C_F9": "Test",
+		"$ELEMNAME_FULL_TANK_SIGNAL": "Test",
+		"$EPCNAME_FULL_TANK_SIGNAL": "Test",
+		
 		"$OBJNAME_027D": "蓄電池",
 		"$EPCNAME_MINIMUM_MAXIMUM_CHARGING_POWER_VALUE": "最小最大充電電力値",
 		"$ELEMNAME_MIN___MAX_CHARGING_POWER_VALUE": "最小/最大充電電力値",

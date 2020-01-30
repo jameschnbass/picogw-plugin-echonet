@@ -347,7 +347,10 @@ exports.eojs = {
         'cd': [(x)=>toInt(x)*0.001],
         'd0': [(x)=>enumForward(x, BATTERY_INTERCONNECT)],
         'e1': [(x)=>x[0]],
-        'e2': [toInt],
+        'e2': [toInt],        
+        'f2': [toInt],        
+        'f6': [toInt],
+        'f9': [(x)=>enumForward(x, ON_OFF_41), (x)=>enumBackward(x, ON_OFF_41)],
     },
     '027d': { // Storage battery
         'a0': [toInt],
