@@ -1,0 +1,32 @@
+{
+  "name": "picogw-plugin-echonet",
+  "version": "1.0.4",
+  "description": "ECHONET plugin of picogw",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KAIT-HEMS/node-picogw-plugin-echonet.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KAIT-HEMS/node-picogw-plugin-echonet/issues"
+  },
+  "homepage": "https://github.com/KAIT-HEMS/node-picogw-plugin-echonet#readme",
+  "dependencies": {
+    "echonet-lite": "0.0.23"
+  },
+  "picogw": {
+    "role": [
+      "server"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^4.13.1",
+    "eslint-config-google": "^0.9.1"
+  }
+}
